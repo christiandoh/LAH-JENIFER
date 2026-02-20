@@ -1,0 +1,49 @@
+/* Typography3D — Main : noir plein, Sub : outline uniquement, effet profondeur */
+
+.wrapper {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.wrapper.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Titre principal — noir plein, bold, style suisse */
+.mainText {
+  font-weight: 800;
+  font-size: clamp(3rem, 12vw, 8rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--color-black);
+  text-transform: uppercase;
+  /* Légère ombre pour effet 3D / profondeur */
+  text-shadow:
+    2px 2px 0 rgba(0, 0, 0, 0.05),
+    4px 4px 0 rgba(0, 0, 0, 0.04);
+  margin: 0;
+}
+
+/* Sous-titre — outline seulement (stroke, pas de fill) */
+.subText {
+  font-weight: 700;
+  font-size: clamp(1.25rem, 4vw, 2.25rem);
+  letter-spacing: 0.15em;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--color-black);
+  text-stroke: 2px var(--color-black);
+  text-transform: uppercase;
+  margin: 0.5rem 0 0;
+  padding: 0;
+}
+
+@media (min-width: 769px) {
+  .subText {
+    letter-spacing: 0.25em;
+  }
+}

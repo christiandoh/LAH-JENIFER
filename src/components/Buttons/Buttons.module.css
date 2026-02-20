@@ -1,0 +1,48 @@
+/* Boutons — Primary noir / Secondary blanc bordure noire, hover fluide */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 1.75rem;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: color 0.25s ease, background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-black);
+  outline-offset: 2px;
+}
+
+/* Primary : fond noir, texte blanc */
+.primary {
+  background: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
+}
+
+.primary:hover {
+  background: transparent;
+  color: var(--color-black);
+}
+
+/* Secondary : fond blanc, bordure et texte noirs */
+.secondary {
+  background: var(--color-white);
+  color: var(--color-black);
+  border-color: var(--color-black);
+}
+
+.secondary:hover {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
