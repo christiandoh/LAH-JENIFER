@@ -3,8 +3,8 @@ import { Typography3D } from '../Typography3D/Typography3D'
 import { Button } from '../Buttons/Buttons'
 import styles from './HeroSection.module.css'
 
-// Mettez votre image dans le dossier public/ puis indiquez son nom ici (ex: 'hero.jpg' → /hero.jpg)
-const HERO_IMAGE = 'lah_remov.png' // ex: '/hero.jpg'
+// Image dans public/ — BASE_URL assure le bon chemin en local et sur GitHub Pages (/LAH-JENIFER/)
+const HERO_IMAGE = import.meta.env.BASE_URL + 'lah_remov.png'
 
 /**
  * HeroSection — Fond blanc, zone pour image (portrait femme) à placer plus tard.
