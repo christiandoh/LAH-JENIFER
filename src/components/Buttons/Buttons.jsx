@@ -10,7 +10,7 @@ export function Button({ children, variant = 'primary', href, onClick, type = 'b
 
   if (href) {
     return (
-      <a href={href} className={classNames}>
+      <a href={href} className={classNames} onClick={onClick}>
         {children}
       </a>
     )

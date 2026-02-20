@@ -1,0 +1,74 @@
+/* Icônes flottantes — couche fixe sur tout le site, animations indépendantes */
+
+.wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.icon {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  font-size: clamp(1rem, 2.2vw, 1.5rem);
+  opacity: 0.12;
+  transform: translate(-50%, -50%);
+  animation: float var(--duration) ease-in-out var(--delay) infinite;
+}
+
+/* Chaque icône suit une trajectoire différente (décalages aléatoires via custom properties) */
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) translate(0, 0) rotate(0deg);
+  }
+  15% {
+    transform: translate(-50%, -50%) translate(8px, -12px) rotate(3deg);
+  }
+  30% {
+    transform: translate(-50%, -50%) translate(-6px, 8px) rotate(-2deg);
+  }
+  45% {
+    transform: translate(-50%, -50%) translate(10px, 5px) rotate(2deg);
+  }
+  60% {
+    transform: translate(-50%, -50%) translate(-10px, -8px) rotate(-3deg);
+  }
+  75% {
+    transform: translate(-50%, -50%) translate(5px, 10px) rotate(1deg);
+  }
+}
+
+/* Variantes de trajectoire pour plus de diversité */
+.icon:nth-child(odd) {
+  animation-name: floatAlt;
+}
+
+@keyframes floatAlt {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) translate(0, 0);
+  }
+  20% {
+    transform: translate(-50%, -50%) translate(-15px, 5px);
+  }
+  40% {
+    transform: translate(-50%, -50%) translate(12px, 10px);
+  }
+  60% {
+    transform: translate(-50%, -50%) translate(-8px, -12px);
+  }
+  80% {
+    transform: translate(-50%, -50%) translate(10px, -5px);
+  }
+}
+
+/* Sur mobile : moins d’icônes visibles (plus petites), garder le même effet */
+@media (max-width: 768px) {
+  .icon {
+    font-size: 1rem;
+    opacity: 0.1;
+  }
+}

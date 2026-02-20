@@ -24,26 +24,33 @@ export function Header() {
 
         <button
           type="button"
-          className={styles.menuToggle}
+          className={`${styles.menuToggle} ${menuOpen ? styles.menuOpen : ''}`}
           aria-expanded={menuOpen}
           aria-controls="main-menu"
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Ouvrir le menu"
+          aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
         >
           <span className={styles.hamburger} />
           <span className={styles.hamburger} />
           <span className={styles.hamburger} />
         </button>
 
-        <ul id="main-menu" className={`${styles.menu} ${menuOpen ? styles.menuOpen : ''}`}>
-          {NAV_ITEMS.map((item) => (
-            <li key={item.label}>
-              <a href={item.href} onClick={() => setMenuOpen(false)}>
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className={`${styles.dropdown} ${menuOpen ? styles.dropdownOpen : ''}`} id="main-menu">
+          <ul className={styles.menu}>
+            {NAV_ITEMS.map((item) => (
+              <li key={item.label}>
+                <a href={item.href} onClick={() => setMenuOpen(false)}>
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <div className={styles.ctaMobile}>
+            <Button variant="primary" href="#contact" onClick={() => setMenuOpen(false)}>
+              Contact
+            </Button>
+          </div>
+        </div>
 
         <div className={styles.cta}>
           <Button variant="primary" href="#contact">

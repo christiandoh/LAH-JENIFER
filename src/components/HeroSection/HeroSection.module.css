@@ -90,16 +90,27 @@
   margin-top: 2.5rem;
 }
 
+/* Tablette : image un peu plus petite */
 @media (max-width: 768px) {
   .imageWrapper {
-    right: 0;
-    max-width: 55vw;
+    right: 2%;
+    max-width: 38vw;
+    max-height: 60vh;
   }
 }
 
+/* Téléphone : photo en taille logo, discrète */
 @media (max-width: 480px) {
   .imageWrapper {
-    max-width: 70vw;
+    right: 50%;
+    top: 18%;
+    transform: translate(50%, 0);
+    max-width: 100px;
+    max-height: 120px;
+  }
+
+  .imageWrapper img {
+    max-height: 120px;
   }
 
   .buttons {

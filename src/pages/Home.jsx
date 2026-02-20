@@ -2,6 +2,8 @@ import React from 'react'
 import { Header } from '../components/Header/Header'
 import { HeroSection } from '../components/HeroSection/HeroSection'
 import { Footer } from '../components/Footer/Footer'
+import { FloatingIcons } from '../components/FloatingIcons/FloatingIcons'
+import { WhatsAppIcon } from '../components/WhatsAppIcon/WhatsAppIcon'
 import styles from './Home.module.css'
 
 /**
@@ -10,6 +12,7 @@ import styles from './Home.module.css'
 export default function Home() {
   return (
     <>
+      <FloatingIcons />
       <Header />
 
       <main>
@@ -127,8 +130,9 @@ export default function Home() {
               Lah Jenifer Nounan Gaëlle
             </p>
             <div className={styles.contactInfo}>
-              <p>
+              <p className={styles.phoneRow}>
                 <a href="tel:+225709496267">07 09 49 62 67</a>
+                <WhatsAppIcon label="Écrire sur WhatsApp" className={styles.whatsapp} size="medium" />
               </p>
               <p>Abidjan, Côte d'Ivoire</p>
               <p>
@@ -154,6 +158,7 @@ export default function Home() {
       </main>
 
       <Footer />
+      <WhatsAppIcon label="Contacter sur WhatsApp" className={styles.whatsappFixed} size="large" />
     </>
   )
 }
