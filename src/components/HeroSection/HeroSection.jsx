@@ -4,7 +4,7 @@ import { Button } from '../Buttons/Buttons'
 import styles from './HeroSection.module.css'
 
 // Mettez votre image dans le dossier public/ puis indiquez son nom ici (ex: 'hero.jpg' → /hero.jpg)
-const HERO_IMAGE = '/lah_remov.png' // ex: '/hero.jpg'
+const HERO_IMAGE = 'lah_remov.png' // ex: '/hero.jpg'
 
 /**
  * HeroSection — Fond blanc, zone pour image (portrait femme) à placer plus tard.
